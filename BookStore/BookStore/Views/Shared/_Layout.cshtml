@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - BookStore</title>
     <link href="~/css/bootswatchthem.css" rel="stylesheet" />
+    <link href="~/css/toastr.css" rel="stylesheet" />
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BookStore.styles.css" asp-append-version="true" />
@@ -78,6 +80,7 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            <h2 class="text-success">  <partial name="_NotificationScripts" /></h2>
             @RenderBody()
         </main>
     </div>
