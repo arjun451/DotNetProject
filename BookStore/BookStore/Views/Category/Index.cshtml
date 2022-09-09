@@ -2,6 +2,13 @@
 @{
     ViewData["Title"] = "IndexOfCategory";
 }
+ 
+<div>
+    @if(TempData["success"]!=null)
+    {
+        <h3 class="text-success">@TempData["success"]</h3>
+    }
+</div>
 <div class="border mt-3">
 <div class="row p-1" >
     <div class="col-6">
