@@ -35,10 +35,52 @@ namespace BookStore.Controllers
             }
             return View();
         }
-        public IActionResult Delete()
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var obj = _db.Categories.Find(id);
+            if(id==0||obj==null)
+            {
+                return NotFound();
+            }
+            return View(obj);
+        }
+        [HttpPost]
+        public IActionResult Edit( Category obj)
+        {
+            if(ModelState.IsValid)
+            {
+                _db.Categories.Update(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var obj = _db.Categories.Find(id);
+            if(obj==null)
+            {
+                return NotFound();
+            }
+            return View(obj);
+        }
+        [HttpPost]
+        public IActionResult Delete(Category obj)
         {
 
-            return View();
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                _db.Categories.Remove(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+             
         }
     }
 }
