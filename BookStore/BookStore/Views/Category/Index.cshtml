@@ -3,7 +3,17 @@
     ViewData["Title"] = "IndexOfCategory";
 }
 
-<h1>Index</h1>
+<div class="row mt-3">
+    <div class="col-6">
+        <h1>Category Index</h1>
+    </div>
+    <div class="col-6 text-lg-end">
+        <a asp-controller="Category" asp-action="Create" class="text-decoration-none btn btn-primary">
+        <h3><i class="bi bi-plus-circle-fill" style="font-size:2rem;color:yellowgreen; margin-right:1rem">
+        </i>Create</h3></a>
+    </div>
+</div>
+
  <table class="table table-bordered table-striped">
      <thead>
 <tr>

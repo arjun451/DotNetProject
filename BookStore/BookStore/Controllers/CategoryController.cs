@@ -18,5 +18,27 @@ namespace BookStore.Controllers
             IEnumerable<Category> obj = _db.Categories.ToList();
             return View(obj);
         }
+        [HttpGet]
+        public IActionResult Create()
+        {
+             
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create( Category obj)
+        {
+            if(ModelState.IsValid)
+            {
+                _db.Add(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+        public IActionResult Delete()
+        {
+
+            return View();
+        }
     }
 }
