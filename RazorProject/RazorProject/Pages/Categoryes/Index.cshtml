@@ -2,3 +2,32 @@
 @model RazorProject.Pages.Categoryes.IndexModel
 @{
 }
+<div class="container mt-2">
+    <div class="row p-0">
+        <div class="col-6">
+            <h2 class="text-primary">Category Index</h2>
+        </div>
+        <div class="col-6">
+            <a  asp-page="create" class="btn btn-primary">Create new category</a>
+        </div>
+    </div>
+    <hr />
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Display order</th>
+            </tr>
+        </thead>
+        <tbody>
+           @foreach(var obj in Model.Categories)
+           {
+               <tr>
+                   <td>@obj.Name</td>
+                   <td>@obj.DisplayOrder</td>
+               </tr>
+           }
+        </tbody>
+    </table>
+
+</div>

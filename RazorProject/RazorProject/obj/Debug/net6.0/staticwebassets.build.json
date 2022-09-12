@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uga4+W6lwE6xc7PDkO5OX3Vt+YiXkCnUdvp4t1U7kIM=",
+  "Hash": "N8DNXNGPm3lh2hmJrp1UT9XOLQN5Q84pO5ndFK+BOiI=",
   "Source": "RazorProject",
   "BasePath": "_content/RazorProject",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Lenovo\\Desktop\\DotNetProject\\RazorProject\\RazorProject\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\RazorProject.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\Desktop\\DotNetProject\\RazorProject\\RazorProject\\wwwroot\\css\\bootwatch.css",
+      "SourceId": "RazorProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\Desktop\\DotNetProject\\RazorProject\\RazorProject\\wwwroot\\",
+      "BasePath": "_content/RazorProject",
+      "RelativePath": "css/bootwatch.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\bootwatch.css"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\Desktop\\DotNetProject\\RazorProject\\RazorProject\\wwwroot\\css\\site.css",
