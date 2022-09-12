@@ -8,7 +8,7 @@
             <h2 class="text-primary">Category Index</h2>
         </div>
         <div class="col-6">
-            <a  asp-page="create" class="btn btn-primary">Create new category</a>
+            <a  asp-page="create" class="btn btn-primary text-end">Create new category</a>
         </div>
     </div>
     <hr />
@@ -25,6 +25,10 @@
                <tr>
                    <td>@obj.Name</td>
                    <td>@obj.DisplayOrder</td>
+                   <td>
+                       <a asp-page="Edite" asp-route-id="@obj.Id" class="btn btn-primary p-1"> Edit</a>
+                        <a asp-page="Delete" asp-route-id="@obj.Id" class="btn btn-danger p-1">Delete</a>
+                   </td>
                </tr>
            }
         </tbody>

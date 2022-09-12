@@ -1,0 +1,42 @@
+﻿@page
+@model RazorProject.Pages.Categoryes.DeleteModel
+@{
+}
+<div class="container border mt-2 shadow-sm">
+    <div class="row mt-2">
+        <h2 class="shadow text-danger"> Delete Category</h2>
+    </div>
+    <hr />
+    <form method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <input asp-for="Category.Id" hidden />
+        <div class="container mt-2 p-1">
+            <label asp-for="Category.Name"></label>
+            <input asp-for="Category.Name" class="form-control " disabled/>
+            <span asp-validation-for="Category.Name" class="text-danger"></span>
+        </div>
+        <div class="container mt-2 p-1">
+            <label asp-for="Category.DisplayOrder"></label>
+            <input asp-for="Category.DisplayOrder" class="form-control " disabled />
+            <span asp-validation-for="Category.DisplayOrder" class="text-danger"></span>
+        </div>
+        <div class="container mt-2 p-1">
+            <label asp-for="Category.Description"></label>
+            <input asp-for="Category.Description" class="form-control " disabled />
+            <span asp-validation-for="Category.Description" class="text-danger"></span>
+        </div>
+        <div class="container mt-3 mb-3" style="display:flex">
+            <div class="col-6 p-0">
+                <button type="submit" value="Delete" class="form-control btn btn-danger">Delete</button>
+            </div>
+            <div class="col-6 p-0">
+                <a asp-page="Index" class=" form-control btn btn-primary">Back</a>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+    }

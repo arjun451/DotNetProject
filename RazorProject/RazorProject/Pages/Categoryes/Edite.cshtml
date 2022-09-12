@@ -1,0 +1,42 @@
+﻿@page
+@model RazorProject.Pages.Categoryes.EditeModel
+@{
+}
+<div class="container border mt-2 shadow-sm">
+    <div class="row mt-2">
+        <h2 class="shadow"> Update Category</h2>
+    </div>
+    <hr />
+    <form method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <input asp-for="Category.Id" hidden />
+        <div class="container mt-2 p-1">
+            <label asp-for="Category.Name"></label>
+            <input asp-for="Category.Name" class="form-control " />
+            <span asp-validation-for="Category.Name" class="text-danger"></span>
+        </div>
+        <div class="container mt-2 p-1">
+            <label asp-for="Category.DisplayOrder"></label>
+            <input asp-for="Category.DisplayOrder" class="form-control " />
+            <span asp-validation-for="Category.DisplayOrder" class="text-danger"></span>
+        </div>
+        <div class="container mt-2 p-1">
+            <label asp-for="Category.Description"></label>
+            <input asp-for="Category.Description" class="form-control " />
+            <span asp-validation-for="Category.Description" class="text-danger"></span>
+        </div>
+        <div class="container mt-3 mb-3" style="display:flex">
+            <div class="col-6 p-0">
+                <button type="submit" value="Edit" class="form-control btn btn-primary">Edit</button>
+            </div>
+           <div class="col-6 p-0">
+               <a asp-page="Index" class=" form-control btn btn-secondary">Back</a>
+           </div>
+        </div>
+
+    </form>
+
+</div>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+    }
