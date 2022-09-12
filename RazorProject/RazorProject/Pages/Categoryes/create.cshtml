@@ -8,6 +8,7 @@
     </div>
     <hr />
     <form method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
         <div class="container mt-2 p-1">
         <label asp-for="Category.Name"></label>
         <input asp-for="Category.Name" class="form-control "/>
