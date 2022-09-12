@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "N8DNXNGPm3lh2hmJrp1UT9XOLQN5Q84pO5ndFK+BOiI=",
+  "Hash": "XoKnm/oUYspVkX+C4FJysZtlbVEsT1GIRzmGRrIas0c=",
   "Source": "RazorProject",
   "BasePath": "_content/RazorProject",
   "Mode": "Default",
@@ -85,6 +85,23 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
+      "Identity": "C:\\Users\\Lenovo\\Desktop\\DotNetProject\\RazorProject\\RazorProject\\wwwroot\\css\\toastr.css",
+      "SourceId": "RazorProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\Desktop\\DotNetProject\\RazorProject\\RazorProject\\wwwroot\\",
+      "BasePath": "_content/RazorProject",
+      "RelativePath": "css/toastr.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\toastr.css"
+    },
+    {
       "Identity": "C:\\Users\\Lenovo\\Desktop\\DotNetProject\\RazorProject\\RazorProject\\wwwroot\\favicon.ico",
       "SourceId": "RazorProject",
       "SourceType": "Discovered",
@@ -117,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\Desktop\\DotNetProject\\RazorProject\\RazorProject\\wwwroot\\js\\toastr.js",
+      "SourceId": "RazorProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\Desktop\\DotNetProject\\RazorProject\\RazorProject\\wwwroot\\",
+      "BasePath": "_content/RazorProject",
+      "RelativePath": "js/toastr.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\toastr.js"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\Desktop\\DotNetProject\\RazorProject\\RazorProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

@@ -5,7 +5,12 @@
 @if(TempData["success"]!=null)
 {
     <div>
-        <h2 class="text-success">@TempData["success"]</h2>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~//js/toastr.js"></script>
+        <script type="text/javascript">
+            toastr.success(@TempData["success"])
+            </script>
+         
     </div>
 }
 <div class="container mt-2">
