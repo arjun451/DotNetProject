@@ -11,17 +11,17 @@
         <div class="container mt-2 p-1">
         <label asp-for="Category.Name"></label>
         <input asp-for="Category.Name" class="form-control "/>
-        <span asp-validation-for="Category.Name"></span>
+        <span asp-validation-for="Category.Name" class="text-danger"></span>
         </div>
         <div class="container mt-2 p-1">
             <label asp-for="Category.DisplayOrder"></label>
             <input asp-for="Category.DisplayOrder" class="form-control " />
-            <span asp-validation-for="Category.DisplayOrder"></span>
+            <span asp-validation-for="Category.DisplayOrder" class="text-danger"></span>
         </div>
         <div class="container mt-2 p-1">
             <label asp-for="Category.Description"></label>
             <input asp-for="Category.Description" class="form-control " />
-            <span asp-validation-for="Category.Description"></span>
+            <span asp-validation-for="Category.Description" class="text-danger"></span>
         </div>
         <div class="container mt-3">
             <button type="submit" value="Create" class="form-control btn btn-primary">Create</button>
