@@ -26,6 +26,7 @@ namespace RazorProject.Pages.Categoryes
             {
                 _db.categories.Update(category);
                 await _db.SaveChangesAsync();
+                TempData["success"] = "Category Edit Successfully";
                 return RedirectToPage("Index");
             }
             return Page();

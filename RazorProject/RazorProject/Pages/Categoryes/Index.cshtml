@@ -2,6 +2,12 @@
 @model RazorProject.Pages.Categoryes.IndexModel
 @{
 }
+@if(TempData["success"]!=null)
+{
+    <div>
+        <h2 class="text-success">@TempData["success"]</h2>
+    </div>
+}
 <div class="container mt-2">
     <div class="row p-0">
         <div class="col-6">

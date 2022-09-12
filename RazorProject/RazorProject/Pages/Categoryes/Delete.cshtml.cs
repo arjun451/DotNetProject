@@ -22,6 +22,7 @@ namespace RazorProject.Pages.Categoryes
 
             _db.categories.Remove(category);
             await _db.SaveChangesAsync();
+            TempData["success"] = "Category Deleted Successfully";
             return RedirectToPage("Index");
         }
     }
