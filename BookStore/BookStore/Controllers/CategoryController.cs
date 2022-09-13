@@ -1,4 +1,5 @@
 ﻿using BookStore.DataAccess.Data;
+using BookStore.DataAccess.Repository.IRepository;
 using BookStore.Model.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,16 +7,16 @@ namespace BookStore.Controllers
 {
     public class CategoryController : Controller
     {
-        private readonly ApplicationDbContext _db;
+        private readonly ICategory _db;
 
-        public CategoryController(ApplicationDbContext db)
+        public CategoryController(ICategory db)
         {
             this._db = db;
         }
         [HttpGet]
         public IActionResult Index()
         {
-            IEnumerable<Category> obj = _db.Categories.ToList();
+            IEnumerable<Category> obj = _db.GetAll();
             return View(obj);
         }
         [HttpGet]
@@ -30,7 +31,7 @@ namespace BookStore.Controllers
             if(ModelState.IsValid)
             {
                 _db.Add(obj);
-                _db.SaveChanges();
+                _db.Save();
                 TempData["success"] = "Category is Created Successfully ";
                 return RedirectToAction("Index");
             }
@@ -39,7 +40,7 @@ namespace BookStore.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            var obj = _db.Categories.Find(id);
+            var obj = _db.GetFirstOrDefault(u=>u.Id==id);
             if(id==0||obj==null)
             {
                 return NotFound();
@@ -51,8 +52,8 @@ namespace BookStore.Controllers
         {
             if(ModelState.IsValid)
             {
-                _db.Categories.Update(obj);
-                _db.SaveChanges();
+                _db.Update(obj);
+                _db.Save();
                 TempData["success"] = "Category Updated Successfully ";
                 return RedirectToAction("Index");
             }
@@ -61,7 +62,7 @@ namespace BookStore.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var obj = _db.Categories.Find(id);
+            var obj = _db.GetFirstOrDefault(u=>u.Id == id);
             if(obj==null)
             {
                 return NotFound();
@@ -78,8 +79,8 @@ namespace BookStore.Controllers
             }
             else
             {
-                _db.Categories.Remove(obj);
-                _db.SaveChanges();
+                _db.Remove(obj);
+                _db.Save();
                 TempData["success"] = "Category Delete Successfully ";
                 return RedirectToAction("Index");
             }
