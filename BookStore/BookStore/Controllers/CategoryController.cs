@@ -1,5 +1,5 @@
-﻿using BookStore.Data;
-using BookStore.Models;
+﻿using BookStore.DataAccess.Data;
+using BookStore.Model.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookStore.Controllers
@@ -31,7 +31,7 @@ namespace BookStore.Controllers
             {
                 _db.Add(obj);
                 _db.SaveChanges();
-                TempData["success"] = "Category is Created";
+                TempData["success"] = "Category is Created Successfully ";
                 return RedirectToAction("Index");
             }
             return View();
@@ -53,7 +53,7 @@ namespace BookStore.Controllers
             {
                 _db.Categories.Update(obj);
                 _db.SaveChanges();
-                TempData["success"] = "Category Updated ";
+                TempData["success"] = "Category Updated Successfully ";
                 return RedirectToAction("Index");
             }
             return View();
@@ -80,7 +80,7 @@ namespace BookStore.Controllers
             {
                 _db.Categories.Remove(obj);
                 _db.SaveChanges();
-                TempData["success"] = "Category Delete ";
+                TempData["success"] = "Category Delete Successfully ";
                 return RedirectToAction("Index");
             }
              

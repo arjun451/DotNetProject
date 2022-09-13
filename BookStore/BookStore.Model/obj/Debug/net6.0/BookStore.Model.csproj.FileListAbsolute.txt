@@ -1,0 +1,12 @@
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.Model\bin\Debug\net6.0\BookStore.Model.deps.json
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.Model\bin\Debug\net6.0\BookStore.Model.dll
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.Model\bin\Debug\net6.0\BookStore.Model.pdb
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.Model\obj\Debug\net6.0\BookStore.Model.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.Model\obj\Debug\net6.0\BookStore.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.Model\obj\Debug\net6.0\BookStore.Model.AssemblyInfoInputs.cache
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.Model\obj\Debug\net6.0\BookStore.Model.AssemblyInfo.cs
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.Model\obj\Debug\net6.0\BookStore.Model.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.Model\obj\Debug\net6.0\BookStore.Model.dll
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.Model\obj\Debug\net6.0\refint\BookStore.Model.dll
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.Model\obj\Debug\net6.0\BookStore.Model.pdb
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.Model\obj\Debug\net6.0\ref\BookStore.Model.dll

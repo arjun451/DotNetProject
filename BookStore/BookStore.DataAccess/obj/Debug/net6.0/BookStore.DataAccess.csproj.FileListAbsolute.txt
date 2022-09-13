@@ -1,0 +1,15 @@
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.DataAccess\bin\Debug\net6.0\BookStore.DataAccess.deps.json
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.DataAccess\bin\Debug\net6.0\BookStore.DataAccess.dll
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.DataAccess\bin\Debug\net6.0\BookStore.DataAccess.pdb
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.DataAccess\bin\Debug\net6.0\BookStore.Model.dll
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.DataAccess\bin\Debug\net6.0\BookStore.Model.pdb
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.DataAccess\obj\Debug\net6.0\BookStore.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.DataAccess\obj\Debug\net6.0\BookStore.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.DataAccess\obj\Debug\net6.0\BookStore.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.DataAccess\obj\Debug\net6.0\BookStore.DataAccess.AssemblyInfo.cs
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.DataAccess\obj\Debug\net6.0\BookStore.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.DataAccess\obj\Debug\net6.0\BookStore.DataAccess.csproj.CopyComplete
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.DataAccess\obj\Debug\net6.0\BookStore.DataAccess.dll
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.DataAccess\obj\Debug\net6.0\refint\BookStore.DataAccess.dll
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.DataAccess\obj\Debug\net6.0\BookStore.DataAccess.pdb
+C:\Users\Lenovo\Desktop\DotNetProject\BookStore\BookStore.DataAccess\obj\Debug\net6.0\ref\BookStore.DataAccess.dll
