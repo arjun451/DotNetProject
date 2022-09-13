@@ -7,16 +7,16 @@ namespace BookStore.Controllers
 {
     public class CategoryController : Controller
     {
-        private readonly ICategory _db;
+        private readonly IUniteOfWork _db;
 
-        public CategoryController(ICategory db)
+        public CategoryController(IUniteOfWork db)
         {
             this._db = db;
         }
         [HttpGet]
         public IActionResult Index()
         {
-            IEnumerable<Category> obj = _db.GetAll();
+            IEnumerable<Category> obj = _db.Category.GetAll();
             return View(obj);
         }
         [HttpGet]
@@ -30,7 +30,7 @@ namespace BookStore.Controllers
         {
             if(ModelState.IsValid)
             {
-                _db.Add(obj);
+                _db.Category.Add(obj);
                 _db.Save();
                 TempData["success"] = "Category is Created Successfully ";
                 return RedirectToAction("Index");
@@ -40,7 +40,7 @@ namespace BookStore.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            var obj = _db.GetFirstOrDefault(u=>u.Id==id);
+            var obj = _db.Category.GetFirstOrDefault(u=>u.Id==id);
             if(id==0||obj==null)
             {
                 return NotFound();
@@ -52,7 +52,7 @@ namespace BookStore.Controllers
         {
             if(ModelState.IsValid)
             {
-                _db.Update(obj);
+                _db.Category.Update(obj);
                 _db.Save();
                 TempData["success"] = "Category Updated Successfully ";
                 return RedirectToAction("Index");
@@ -62,7 +62,7 @@ namespace BookStore.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var obj = _db.GetFirstOrDefault(u=>u.Id == id);
+            var obj = _db.Category.GetFirstOrDefault(u=>u.Id == id);
             if(obj==null)
             {
                 return NotFound();
@@ -79,7 +79,7 @@ namespace BookStore.Controllers
             }
             else
             {
-                _db.Remove(obj);
+                _db.Category.Remove(obj);
                 _db.Save();
                 TempData["success"] = "Category Delete Successfully ";
                 return RedirectToAction("Index");

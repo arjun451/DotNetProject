@@ -1,6 +1,5 @@
 ﻿using BookStore.DataAccess.Data;
 using BookStore.DataAccess.Repository.IRepository;
-using BookStore.Model.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,20 +8,20 @@ using System.Threading.Tasks;
 
 namespace BookStore.DataAccess.Repository
 {
-    public class CategoryRepository : Repository<Category>, ICategoryRepository
+    public class UniteOfWork : IUniteOfWork
     {
         private readonly ApplicationDbContext _db;
 
-        public CategoryRepository(ApplicationDbContext db) : base(db)
+        public UniteOfWork(ApplicationDbContext db)
         {
             this._db = db;
+            Category = new CategoryRepository(_db);
         }
+        public ICategoryRepository Category { get; set; }
 
-        
-
-        public void Update(Category obj)
+        public void Save()
         {
-             _db.Categories.Update(obj);
+             _db.SaveChanges();
         }
     }
 }
