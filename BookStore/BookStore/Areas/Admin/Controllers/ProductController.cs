@@ -1,6 +1,7 @@
 ﻿using BookStore.DataAccess.Data;
 using BookStore.DataAccess.Repository.IRepository;
 using BookStore.Model.Models;
+using BookStore.Model.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -43,31 +44,35 @@ namespace BookStore.UserInterface.Areas.Admin.Controllers
         public IActionResult Upsert(int? id)
         {
             Product product = new();
-            IEnumerable<SelectListItem> CategoryList = _unitOfwork.Category.GetAll().Select(
-                u => new SelectListItem
-                {
-                    Text = u.Name,
-                    Value = u.Id.ToString()
-                });
-            IEnumerable<SelectListItem> CoverTypeList = _unitOfwork.CoverType.GetAll().Select(
+            ProductVM productVM = new ProductVM()
+            {
+                Product = product,
+                CategoryList = _unitOfwork.Category.GetAll().Select(
+                              u => new SelectListItem
+                               {
+                                  Text = u.Name,
+                                  Value = u.Id.ToString()
+                               }),
+                CoverTypeList = _unitOfwork.CoverType.GetAll().Select(
                u => new SelectListItem
                {
                    Text = u.Name,
                    Value = u.Id.ToString()
-               });
+               })
 
+        };
+             
             if (id == 0||id==null)
             {
                 //create product
-                ViewBag.CategoryList = CategoryList;
-                ViewData["CoverTypeList"] = CoverTypeList;
-                return View(product);
+                
+                return View(productVM);
             }
             else
             {
                 //update product
             }
-            return View(product);
+            return View(productVM);
         }
         [HttpPost]
         public IActionResult Edit(Product obj)
