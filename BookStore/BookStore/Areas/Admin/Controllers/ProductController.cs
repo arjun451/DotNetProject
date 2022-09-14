@@ -75,11 +75,11 @@ namespace BookStore.UserInterface.Areas.Admin.Controllers
             return View(productVM);
         }
         [HttpPost]
-        public IActionResult Edit(Product obj)
+        public IActionResult Upsert(ProductVM obj,IFormFile File )
         {
             if (ModelState.IsValid)
             {
-                _unitOfwork.Product.Update(obj);
+                _unitOfwork.Product.Update(obj.Product);
                 _unitOfwork.Save();
                 TempData["success"] = "Category Updated Successfully ";
                 return RedirectToAction("Index");

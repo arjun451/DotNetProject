@@ -9,7 +9,7 @@
 <hr />
 <div class="row m-2">
     <div class=" ">
-        <form method="post" asp-action="Upsert">
+        <form method="post" asp-action="Upsert" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="form-group">
@@ -22,61 +22,76 @@
                 <textarea asp-for="Product.Description" rows="3" class="form-control"></textarea>
                 <span asp-validation-for="Product.Description" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="row">
+            <div class="form-group col-6">
                 <label asp-for="Product.ISBN" class="control-label"></label>
                 <input asp-for="Product.ISBN" class="form-control" />
                 <span asp-validation-for="Product.ISBN" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group col-6">
                 <label asp-for="Product.Author" class="control-label"></label>
                 <input asp-for="Product.Author" class="form-control" />
                 <span asp-validation-for="Product.Author" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            </div>
+            <div class="row">
+            <div class="form-group col-6">
                 <label asp-for="Product.Price" class="control-label"></label>
                 <input asp-for="Product.Price" class="form-control" />
                 <span asp-validation-for="Product.Price" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group col-6">
                 <label asp-for="Product.ListPrice" class="control-label"></label>
                 <input asp-for="Product.ListPrice" class="form-control" />
                 <span asp-validation-for="Product.ListPrice" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            </div>
+            <div class="row">
+            <div class="form-group col-6">
                 <label asp-for="Product.Price50" class="control-label"></label>
                 <input asp-for="Product.Price50" class="form-control" />
                 <span asp-validation-for="Product.Price50" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group col-6">
                 <label asp-for="Product.Price100" class="control-label"></label>
                 <input asp-for="Product.Price100" class="form-control" />
                 <span asp-validation-for="Product.Price100" class="text-danger"></span>
             </div>
-            <div class="mb-3">
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.ImageUrl" class="control-label"></label>
+                <input   type="file" class="form-control" />
+                <span asp-validation-for="Product.ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="row">
+            <div class="mb-3 col-6">
                 <label asp-for="Product.CategoryId" class="control-label"></label>
                 <select asp-for="Product.CategoryId" asp-items="@Model.CategoryList" class="form-select">
                     <option disabled selected>--Select Category--</option>
                 </select>
                 <span asp-validation-for="Product.CategoryId" class="text-danger"></span>
             </div>
-             <div class="mb-3">
+             <div class="mb-3 col-6">
                 <label asp-for="Product.CoverTypeId" class="control-label"></label>
                 <select asp-for="Product.CoverTypeId" asp-items="@Model.CoverTypeList" class="form-select">
                     <option disabled selected>--Select CoverType--</option>
                 </select>
                 <span asp-validation-for="Product.CoverTypeId" class="text-danger"></span>
             </div>
-
-            <div class="form-group mt-2">
-                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+            <div class="row">
+            <div class="form-group mt-2 col-6">
+                <input type="submit" value="Update" class="btn btn-primary form-control" />
+            </div>
+            <div class="form-group mt-2 col-6">
+                    <a asp-controller="Product" asp-action="Index" class="btn btn-secondary form-control"> Back  </a>
+            </div>
             </div>
         </form>
     </div>
 </div>
 
-<div class="m-3">
-    <a asp-controller="Product" asp-action="Index"><i class="bi bi-skip-backward-circle-fill" style="font-size:2rem;color:darkred;margin:1rem;"></i> </a>
-</div>
+
 
 @section Scripts{
 
