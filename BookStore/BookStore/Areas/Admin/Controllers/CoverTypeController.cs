@@ -6,18 +6,18 @@ using Microsoft.AspNetCore.Mvc;
 namespace BookStore.UserInterface.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class CategoryController : Controller
+    public class CoverTypeController : Controller
     {
         private readonly IUniteOfWork _unitOfwork;
 
-        public CategoryController(IUniteOfWork unitOfwork)
+        public CoverTypeController(IUniteOfWork unitOfwork)
         {
             _unitOfwork = unitOfwork;
         }
         [HttpGet]
         public IActionResult Index()
         {
-            IEnumerable<Category> obj = _unitOfwork.Category.GetAll();
+            IEnumerable<CoverType> obj = _unitOfwork.CoverType.GetAll();
             return View(obj);
         }
         [HttpGet]
@@ -27,13 +27,13 @@ namespace BookStore.UserInterface.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(Category obj)
+        public IActionResult Create(CoverType obj)
         {
             if (ModelState.IsValid)
             {
-                _unitOfwork.Category.Add(obj);
+                _unitOfwork.CoverType.Add(obj);
                 _unitOfwork.Save();
-                TempData["success"] = "Category is Created Successfully ";
+                TempData["success"] = "CoverType is Created Successfully ";
                 return RedirectToAction("Index");
             }
             return View();
@@ -41,7 +41,7 @@ namespace BookStore.UserInterface.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            var obj = _unitOfwork.Category.GetFirstOrDefault(u => u.Id == id);
+            var obj = _unitOfwork.CoverType.GetFirstOrDefault(u => u.Id == id);
             if (id == 0 || obj == null)
             {
                 return NotFound();
@@ -49,13 +49,13 @@ namespace BookStore.UserInterface.Areas.Admin.Controllers
             return View(obj);
         }
         [HttpPost]
-        public IActionResult Edit(Category obj)
+        public IActionResult Edit(CoverType obj)
         {
             if (ModelState.IsValid)
             {
-                _unitOfwork.Category.Update(obj);
+                _unitOfwork.CoverType.Update(obj);
                 _unitOfwork.Save();
-                TempData["success"] = "Category Updated Successfully ";
+                TempData["success"] = "CoverType Updated Successfully ";
                 return RedirectToAction("Index");
             }
             return View();
@@ -63,7 +63,7 @@ namespace BookStore.UserInterface.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var obj = _unitOfwork.Category.GetFirstOrDefault(u => u.Id == id);
+            var obj = _unitOfwork.CoverType.GetFirstOrDefault(u => u.Id == id);
             if (obj == null)
             {
                 return NotFound();
@@ -71,7 +71,7 @@ namespace BookStore.UserInterface.Areas.Admin.Controllers
             return View(obj);
         }
         [HttpPost]
-        public IActionResult Delete(Category obj)
+        public IActionResult Delete(CoverType obj)
         {
 
             if (obj == null)
@@ -80,9 +80,9 @@ namespace BookStore.UserInterface.Areas.Admin.Controllers
             }
             else
             {
-                _unitOfwork.Category.Remove(obj);
+                _unitOfwork.CoverType.Remove(obj);
                 _unitOfwork.Save();
-                TempData["success"] = "Category Delete Successfully ";
+                TempData["success"] = "CoverType Delete Successfully ";
                 return RedirectToAction("Index");
             }
 

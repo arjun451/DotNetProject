@@ -1,0 +1,37 @@
+﻿@model BookStore.Model.Models.CoverType
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h4>Update CoverType</h4>
+<hr />
+<div class="row m-2">
+    <div class=" ">
+        <form method="post" asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+             
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+           
+
+            <div class="form-group mt-2">
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="m-3">
+    <a asp-controller="CoverType" asp-action="Index"><i class="bi bi-skip-backward-circle-fill" style="font-size:2rem;color:darkred;margin:1rem;"></i> </a>
+</div>
+
+@section Scripts{
+
+    <partial name="_ValidationScriptsPartial">
+
+    }
+
