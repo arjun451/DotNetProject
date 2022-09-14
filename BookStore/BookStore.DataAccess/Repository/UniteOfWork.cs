@@ -16,8 +16,11 @@ namespace BookStore.DataAccess.Repository
         {
             this._db = db;
             Category = new CategoryRepository(_db);
+            CoverType = new CoverTypeRepository(_db);
         }
-        public ICategoryRepository Category { get; set; }
+        public ICategoryRepository Category { get;private set; }
+
+        public ICoverTypeRepository CoverType { get; private set; } 
 
         public void Save()
         {
