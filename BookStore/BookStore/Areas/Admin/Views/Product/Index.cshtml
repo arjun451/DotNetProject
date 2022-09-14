@@ -1,0 +1,36 @@
+﻿ 
+@{
+    ViewData["Title"] = "ProductList";
+}
+
+
+<div class="border mt-3">
+    <div class="row p-1">
+        <div class="col-6">
+            <h1>Product List</h1>
+        </div>
+        <div class="col-6 text-lg-end mt-2">
+            <a asp-controller="Product" asp-action="Upsert" class="text-decoration-none btn btn-primary">
+                <h3>
+                    <i class="bi bi-plus-circle-fill" style="font-size:2rem;color:yellowgreen; margin-right:1rem">
+                    </i>Create Product
+                </h3>
+            </a>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>ISBN</th>
+                <th>Price</th>
+                <th>Author</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+         
+    </table>
+</div>
+
+
