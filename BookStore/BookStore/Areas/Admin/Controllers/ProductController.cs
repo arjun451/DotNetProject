@@ -72,8 +72,10 @@ namespace BookStore.UserInterface.Areas.Admin.Controllers
             else
             {
                 //update product
+                productVM.Product = _unitOfwork.Product.GetFirstOrDefault(u => u.Id == id);
+                return View(productVM);
             }
-            return View(productVM);
+            
         }
         [HttpPost]
         public IActionResult Upsert(ProductVM obj,IFormFile? File )
@@ -86,15 +88,33 @@ namespace BookStore.UserInterface.Areas.Admin.Controllers
                     string fileName = Guid.NewGuid().ToString();
                     var uploads = Path.Combine(wwwRootPath, @"Images\Product");
                     var extansion = Path.GetExtension(File.FileName);
+                    if(obj.Product.ImageUrl!=null)
+                    {
+                        var oldImagePath = Path.Combine(wwwRootPath, obj.Product.ImageUrl.TrimStart('\\'));
+                        if(System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+                    }
                     using (var fileStreams = new FileStream(Path.Combine(uploads,fileName+extansion), FileMode.Create))
                     {
                         File.CopyTo(fileStreams);
                     }
                     obj.Product.ImageUrl = @"\Images\Product\" + fileName + extansion;
                 }
-                _unitOfwork.Product.Add(obj.Product);
+                string success = "";
+                if (obj.Product.Id == 0)
+                {
+                    _unitOfwork.Product.Add(obj.Product);
+                    success= "Product Created Successfully ";
+                }
+                else
+                {
+                    _unitOfwork.Product.Update(obj.Product);
+                    success = "Product Update Successfully ";
+                }
                 _unitOfwork.Save();
-                TempData["success"] = "Product Created Successfully ";
+                TempData["success"] = success;
                 return RedirectToAction("Index");
             }
             return View(obj);

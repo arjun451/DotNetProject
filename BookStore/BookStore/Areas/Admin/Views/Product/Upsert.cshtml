@@ -13,7 +13,8 @@
     <div class=" ">
         <form method="post" asp-action="Upsert" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-           
+           <input asp-for="Product.Id"hidden />
+           <input asp-for="Product.ImageUrl"hidden />
             <div class="form-group">
                 <label asp-for="Product.Title" class="control-label"></label>
                 <input asp-for="Product.Title" class="form-control" />

@@ -38,13 +38,16 @@ namespace BookStore.DataAccess.Repository
             return query.ToList();
         }
 
-        public T GetFirstOrDefault(Expression<Func<T, bool>> filter, string? includeProprites = null)
+        public T GetFirstOrDefault(Expression<Func<T, bool>> filter, string? includeProprites=null)
         {
             IQueryable<T> query = dbset;
             query = query.Where(filter);
-            foreach (var includeProprite in includeProprites.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+            if (includeProprites != null)
             {
-                query = query.Include(includeProprite);
+                foreach (var includeProprite in includeProprites.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(includeProprite);
+                }
             }
             return query.FirstOrDefault();
         }
