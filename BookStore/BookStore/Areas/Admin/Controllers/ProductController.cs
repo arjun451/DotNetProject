@@ -20,15 +20,15 @@ namespace BookStore.UserInterface.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            IEnumerable<Product> obj = _unitOfwork.Product.GetAll();
-            return View(obj);
+            
+            return View( );
         }
         [HttpGet]
-        public IActionResult Create()
-        {
+        //public IActionResult Create()
+        //{
 
-            return View();
-        }
+        //    return View();
+        //}
         //[HttpPost]
         //public IActionResult Create(Product obj)
         //{
@@ -126,5 +126,16 @@ namespace BookStore.UserInterface.Areas.Admin.Controllers
             }
 
         }
+        #region API CALLS
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            var productList = _unitOfwork.Product.GetAll();
+            return Json(new {data=productList});    
+        }
+
+        #endregion
     }
+
+
 }
