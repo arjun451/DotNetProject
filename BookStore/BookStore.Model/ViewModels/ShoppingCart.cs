@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookStore.DataAccess.Repository.IRepository
+namespace BookStore.Model.ViewModels
 {
-    public interface IProductRepository : IRepository<Product>
+    public class ShoppingCart
     {
-         
-        void Update(Product obj);
+        public Product Product { get; set; }
+        public int Count { get; set; }
     }
 }
