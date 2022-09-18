@@ -11,10 +11,11 @@ namespace BookStore.UserInterface.Areas.Admin.Controllers
     public class ProductController : Controller
     {
         private readonly IUniteOfWork _unitOfwork;
-
-        public ProductController(IUniteOfWork unitOfwork)
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        public ProductController(IUniteOfWork unitOfwork, IWebHostEnvironment webHostEnvironment)
         {
             _unitOfwork = unitOfwork;
+            _webHostEnvironment = webHostEnvironment;
         }
         [HttpGet]
         public IActionResult Index()
@@ -43,10 +44,10 @@ namespace BookStore.UserInterface.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Upsert(int? id)
         {
-            Product product = new();
+             
             ProductVM productVM = new ProductVM()
             {
-                Product = product,
+                Product =  new(),
                 CategoryList = _unitOfwork.Category.GetAll().Select(
                               u => new SelectListItem
                                {
@@ -75,16 +76,28 @@ namespace BookStore.UserInterface.Areas.Admin.Controllers
             return View(productVM);
         }
         [HttpPost]
-        public IActionResult Upsert(ProductVM obj,IFormFile File )
+        public IActionResult Upsert(ProductVM obj,IFormFile? File )
         {
             if (ModelState.IsValid)
             {
-                _unitOfwork.Product.Update(obj.Product);
+                string wwwRootPath = _webHostEnvironment.WebRootPath;
+                if(File!=null)
+                {
+                    string fileName = Guid.NewGuid().ToString();
+                    var uploads = Path.Combine(wwwRootPath, @"Images\Product");
+                    var extansion = Path.GetExtension(File.FileName);
+                    using (var fileStreams = new FileStream(Path.Combine(uploads,fileName+extansion), FileMode.Create))
+                    {
+                        File.CopyTo(fileStreams);
+                    }
+                    obj.Product.ImageUrl = @"\Images\Product\" + fileName + extansion;
+                }
+                _unitOfwork.Product.Add(obj.Product);
                 _unitOfwork.Save();
-                TempData["success"] = "Category Updated Successfully ";
+                TempData["success"] = "Product Created Successfully ";
                 return RedirectToAction("Index");
             }
-            return View();
+            return View(obj);
         }
         [HttpGet]
         public IActionResult Delete(int id)
