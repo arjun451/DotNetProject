@@ -130,7 +130,7 @@ namespace BookStore.UserInterface.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            var productList = _unitOfwork.Product.GetAll();
+            var productList = _unitOfwork.Product.GetAll(includeProprites:"Category,CoverType");
             return Json(new {data=productList});    
         }
 
